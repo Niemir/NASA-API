@@ -1,7 +1,14 @@
 import { makeStyles } from '@material-ui/core/styles';
-import Grid from '@material-ui/core/Grid';
-import Paper from '@material-ui/core/Paper';
-import Container from '@material-ui/core/Container';
+
+import {
+  Grid,
+  Paper,
+  Container,
+  Typography,
+  FormControl,
+  Input,
+  InputLabel,
+} from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -14,6 +21,14 @@ const useStyles = makeStyles((theme) => ({
   control: {
     padding: theme.spacing(2),
   },
+  title: {
+    fontSize: 42,
+  },
+  subtitle: {
+    color: theme.palette.grey[700],
+    fontSize: 24,
+    // margin: theme.spacing(1, 2),
+  },
 }));
 
 const App = () => {
@@ -23,8 +38,29 @@ const App = () => {
       <Container>
         <Grid container className={classes.root} spacing={2}>
           <Grid item xs={12}>
+            <Grid className={classes.control}>
+              <Typography
+                variant='h3'
+                align='center'
+                color='primary'
+                gutterBottom
+              >
+                Nasa api app
+              </Typography>
+              <Typography
+                variant='h4'
+                align='center'
+                className={classes.subtitle}
+                gutterBottom
+              >
+                Enter any location and see what it looks like from the satellite
+              </Typography>
+            </Grid>
             <Grid container justify='center' spacing={2}>
-              <Paper className={classes.paper} />
+              <FormControl>
+                <InputLabel htmlFor='my-input'>Location</InputLabel>
+                <Input id='my-input' aria-describedby='my-helper-text' />
+              </FormControl>
             </Grid>
           </Grid>
         </Grid>
