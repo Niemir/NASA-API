@@ -6,13 +6,7 @@ export const Wrapper = styled.div`
   align-items: center;
   justify-content: center;
   position: relative;
-  margin-top: 2rem;
-  @media screen and (min-width: 768px) {
-    margin-top: 3rem;
-  }
-  @media screen and (min-width: 1024px) {
-    margin-top: 4rem;
-  }
+
   .loader {
     position: absolute;
     top: 50%;
@@ -36,24 +30,22 @@ export const Image = styled.div`
   position: relative;
   width: 100%;
 
+  @media screen and (min-width: 768px) {
+    padding-top: 100%;
+    margin: 0 auto;
+  }
+  @media screen and (min-width: 1366px) {
+    /* max-width: 768px;
+    height: 432px;
+    padding-top: 0;
+    margin: 0 auto; */
+  }
   img {
     position: absolute;
     top: 0;
     left: 0;
     height: 100%;
     width: 100%;
-  }
-  @media screen and (min-width: 768px) {
-    max-width: 640px;
-    height: 360px;
-    padding-top: 0;
-    margin: 0 auto;
-  }
-  @media screen and (min-width: 1366px) {
-    max-width: 768px;
-    height: 432px;
-    padding-top: 0;
-    margin: 0 auto;
   }
   &::before {
     content: '';
@@ -79,7 +71,7 @@ export const Image = styled.div`
     content: '';
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.5);
     display: flex;
     align-content: center;
     justify-content: center;

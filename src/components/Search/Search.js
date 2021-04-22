@@ -2,8 +2,9 @@ import React, { useEffect, useState, useRef } from 'react';
 import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
 import mapboxgl from 'mapbox-gl';
-import { Wrapper, Input } from './Search.styles';
+import { Wrapper, Input, Row } from './Search.styles';
 import { ImageContainer } from '../ImageContainer/ImageContainer';
+import Map from '../Map/Map';
 
 const nasaToken = process.env.REACT_APP_NASA_KEY;
 mapboxgl.accessToken = process.env.REACT_APP_MAPBOXGL_KEY;
@@ -28,6 +29,8 @@ const Search = () => {
     const results = document.getElementById('result');
     // Add geocoder result to container.
     geocoder.on('result', (e) => {
+      setImg(null);
+      setImgLoaded(false);
       setLang(e.result.center[0]);
       setLat(e.result.center[1]);
       setLoading(true);
@@ -53,13 +56,16 @@ const Search = () => {
     <Wrapper>
       <Input id='geocoder'></Input>
       <pre id='result'></pre>
-      <ImageContainer
-        loading={loading}
-        img={img}
-        setImgLoaded={setImgLoaded}
-        imgLoaded={imgLoaded}
-        setLoading={setLoading}
-      />
+      <Row>
+        <ImageContainer
+          loading={loading}
+          setLoading={setLoading}
+          imgLoaded={imgLoaded}
+          setImgLoaded={setImgLoaded}
+          img={img}
+        />
+        <Map loading={loading} lang={lang} lat={lat} img={img} />
+      </Row>
     </Wrapper>
   );
 };

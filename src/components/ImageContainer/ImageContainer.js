@@ -18,7 +18,7 @@ export const ImageContainer = ({
       {loading ? <Loader /> : null}
       <a
         href={imgLoaded ? img : ''}
-        className={imgLoaded ? 'with-img' : ''}
+        className={imgLoaded && img ? 'with-img' : ''}
         target='_blank'
         rel='noreferrer'
       >
