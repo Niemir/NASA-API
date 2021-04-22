@@ -1,6 +1,6 @@
 import 'leaflet/dist/leaflet.css';
-import React, { useEffect } from 'react';
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import React from 'react';
+import { MapContainer, TileLayer } from 'react-leaflet';
 import styled from 'styled-components';
 import breakpoints from '../../global/breakpoints';
 const { SMALL } = breakpoints;

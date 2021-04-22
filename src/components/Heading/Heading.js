@@ -5,7 +5,7 @@ const Heading = () => {
   return (
     <>
       <Logo>
-        <img src={NasaLogo} />
+        <img src={NasaLogo} alt="Nasa" />
       </Logo>
 
       <StyledTitle>Satelife</StyledTitle>
