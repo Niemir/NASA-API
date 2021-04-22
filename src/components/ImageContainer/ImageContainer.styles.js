@@ -1,5 +1,8 @@
 import styled from 'styled-components';
 import Zoom from '../../assets/zoom.svg';
+import breakpoints from '../../global/breakpoints';
+const { SMALL, LARGE } = breakpoints;
+
 export const Wrapper = styled.div`
   width: 100%;
   display: flex;
@@ -30,11 +33,11 @@ export const Image = styled.div`
   position: relative;
   width: 100%;
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: ${SMALL}) {
     padding-top: 100%;
     margin: 0 auto;
   }
-  @media screen and (min-width: 1366px) {
+  @media screen and (min-width: ${LARGE}) {
     /* max-width: 768px;
     height: 432px;
     padding-top: 0;

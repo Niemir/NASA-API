@@ -1,13 +1,9 @@
-import React, { useEffect } from 'react';
 import 'leaflet/dist/leaflet.css';
-import 'leaflet/dist/images/layers.png';
-import 'leaflet/dist/images/layers-2x.png';
-import 'leaflet/dist/images/marker-icon.png';
-import 'leaflet/dist/images/marker-icon-2x.png';
-import 'leaflet/dist/images/marker-shadow.png';
+import React, { useEffect } from 'react';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import styled from 'styled-components';
-import Loader from '../Loader/Loader';
+import breakpoints from '../../global/breakpoints';
+const { SMALL } = breakpoints;
 
 const StyledMap = styled.div`
   width: 100%;
@@ -16,7 +12,7 @@ const StyledMap = styled.div`
     width: 100%;
     height: 100px;
     padding-top: 56.25%;
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: ${SMALL}) {
       padding-top: 100%;
     }
   }

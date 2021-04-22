@@ -2,8 +2,8 @@ import React, { useEffect, useState, useRef } from 'react';
 import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
 import mapboxgl from 'mapbox-gl';
-import { Wrapper, Input, Row } from './Search.styles';
 import { ImageContainer } from '../ImageContainer/ImageContainer';
+import { Wrapper, Input, Row } from './Search.styles';
 import Map from '../Map/Map';
 
 const nasaToken = process.env.REACT_APP_NASA_KEY;

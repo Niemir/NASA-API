@@ -1,18 +1,19 @@
 import React from 'react';
 import Search from './components/Search/Search';
+import Heading from './components/Heading/Heading';
 import styled from 'styled-components';
 import background from './assets/bg.svg';
-import Heading from './components/Heading/Heading';
-
+import breakpoints from './global/breakpoints';
+const { SMALL, MEDIUM } = breakpoints;
 const Container = styled.div`
   background-image: url(${background});
   background-size: cover;
   padding: 2rem;
   min-height: 100vh;
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: ${SMALL}) {
     padding: 3rem;
   }
-  @media screen and (min-width: 1024px) {
+  @media screen and (min-width: ${MEDIUM}) {
     padding: 4rem;
   }
 `;
@@ -24,7 +25,7 @@ const Wrapper = styled.section`
 const App = () => {
   return (
     <Container>
-      <Wrapper className='App'>
+      <Wrapper className="App">
         <Heading />
         <Search />
       </Wrapper>
