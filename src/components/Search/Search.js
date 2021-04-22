@@ -46,24 +46,16 @@ const Search = () => {
     if (initialRender.current) {
       initialRender.current = false;
     } else {
-      setImg(
-        `https://api.nasa.gov/planetary/earth/imagery?lon=${lang}&dim=0.07&lat=${lat}&api_key=${nasaToken}`
-      );
+      setImg(`https://api.nasa.gov/planetary/earth/imagery?lon=${lang}&dim=0.07&lat=${lat}&api_key=${nasaToken}`);
     }
   }, [lang, lat]);
 
   return (
     <Wrapper>
-      <Input id='geocoder'></Input>
-      <pre id='result'></pre>
+      <Input id="geocoder"></Input>
+      <pre id="result"></pre>
       <Row>
-        <ImageContainer
-          loading={loading}
-          setLoading={setLoading}
-          imgLoaded={imgLoaded}
-          setImgLoaded={setImgLoaded}
-          img={img}
-        />
+        <ImageContainer loading={loading} setLoading={setLoading} imgLoaded={imgLoaded} setImgLoaded={setImgLoaded} img={img} />
         <Map loading={loading} lang={lang} lat={lat} img={img} />
       </Row>
     </Wrapper>

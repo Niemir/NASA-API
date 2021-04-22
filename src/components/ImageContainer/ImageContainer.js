@@ -2,13 +2,7 @@ import React from 'react';
 import { Wrapper, Image } from './ImageContainer.styles';
 import Loader from '../Loader/Loader';
 
-export const ImageContainer = ({
-  loading,
-  img,
-  setImgLoaded,
-  imgLoaded,
-  setLoading,
-}) => {
+export const ImageContainer = ({ loading, img, setImgLoaded, imgLoaded, setLoading }) => {
   const loadImageHanlder = () => {
     setImgLoaded(true);
     setLoading(false);
@@ -16,17 +10,8 @@ export const ImageContainer = ({
   return (
     <Wrapper>
       {loading ? <Loader /> : null}
-      <a
-        href={imgLoaded ? img : ''}
-        className={imgLoaded && img ? 'with-img' : ''}
-        target='_blank'
-        rel='noreferrer'
-      >
-        <Image>
-          {img ? (
-            <img className='img' src={img} onLoad={() => loadImageHanlder()} />
-          ) : null}
-        </Image>
+      <a href={imgLoaded ? img : ''} className={imgLoaded && img ? 'with-img' : ''} target="_blank" rel="noreferrer">
+        <Image>{img ? <img className="img" src={img} onLoad={() => loadImageHanlder()} /> : null}</Image>
       </a>
     </Wrapper>
   );
